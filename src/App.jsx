@@ -77,66 +77,69 @@ function App() {
   const isFlipped = (id) => flipped.includes(id) || solved.includes(id);
   const isSolved = (id) => solved.includes(id);
   return (
-    <div className="flex flex-col justify-center items-center  min-h-screen  " style={{backgroundColor:'#242424'}}>
-        <h1 className=" text-4xl font-bold  m-2 p-2 text-red-500 ">
-          <span className="redText mr-2 span">Memory</span>
-          <span className="blueText span ">Game</span>
-        </h1>
-        <div className=" m-4 p-4 text-3xl   flex items-center justify-center ">
-          <label
-            htmlFor="gridSize"
-            className=" text-white font-semibold yellowText"
-          >
-            GridSize :
-          </label>
-          <input
-            type="number"
-            id="gridSize"
-            min={2}
-            max={10}
-            value={gridSize}
-            onChange={handleGridSize}
-            className=" bg-inherit text-white yellowText rounded-md  py-1 num"
-          />
-        </div>
-        {/* cards */}
-        <div
-          className={` grid gap-4 mb-2 `}
-          style={{
-            gridTemplateColumns: `repeat(${gridSize},minmax(0,1fr))`,
-            width: `min(100%,${gridSize * 5}rem)`,
-          }}
+    <div
+      className="flex flex-col justify-center items-center  min-h-screen  "
+      style={{ backgroundColor: "#242424" }}
+    >
+      <h1 className=" text-4xl font-bold  m-2 p-2 text-red-500 ">
+        <span className="redText mr-2 span">Memory</span>
+        <span className="blueText span ">Game</span>
+      </h1>
+      <div className=" m-4 p-4 text-3xl   flex items-center justify-center ">
+        <label
+          htmlFor="gridSize"
+          className=" text-white font-semibold yellowText"
         >
-          {cards.map((card) => {
-            return (
-              <div
-                className={`btn flex aspect-square text-lg text-white items-center justify-center ${
-                  isFlipped(card.id)
-                    ? isSolved(card.id)
-                      ? "s bg-green-500 "
-                      : " f bg-blue-500 animate-bounce"
-                    : " n"
-                }`}
-                key={card.id}
-                onClick={() => handleCard(card.id)}
-              >
-                {" "}
-                {isFlipped(card.id) ? card.number : "?"}{" "}
-              </div>
-            );
-          })}
-        </div>
-        {/* result */}
-        {won && <div className="text-2xl m-4 text-white  w "> YOU WON !! </div>}
-
-        {/* reset */}
-        <button
-          onClick={intializeGame}
-          className=" r n text-white text-xl p-2 m-4"
-        >
-          {won ? "play again" : "reset"}
-        </button>
+          GridSize :
+        </label>
+        <input
+          type="number"
+          id="gridSize"
+          min={2}
+          max={10}
+          value={gridSize}
+          onChange={handleGridSize}
+          className=" bg-inherit text-white yellowText rounded-md  py-1 num"
+        />
       </div>
+      {/* cards */}
+      <div
+        className={` grid gap-4 mb-2 `}
+        style={{
+          gridTemplateColumns: `repeat(${gridSize},minmax(0,1fr))`,
+          width: `min(100%,${gridSize * 5}rem)`,
+        }}
+      >
+        {cards.map((card) => {
+          return (
+            <div
+              className={`btn flex aspect-square text-lg text-white items-center justify-center ${
+                isFlipped(card.id)
+                  ? isSolved(card.id)
+                    ? "s bg-green-500 "
+                    : " f bg-blue-500 animate-bounce"
+                  : " n"
+              }`}
+              key={card.id}
+              onClick={() => handleCard(card.id)}
+            >
+              {" "}
+              {isFlipped(card.id) ? card.number : "?"}{" "}
+            </div>
+          );
+        })}
+      </div>
+      {/* result */}
+      {won && <div className="text-2xl m-4 text-white  w "> YOU WON !! </div>}
+
+      {/* reset */}
+      <button
+        onClick={intializeGame}
+        className=" r n text-white text-xl p-2 m-4"
+      >
+        {won ? "play Again" : "reset"}
+      </button>
+    </div>
   );
 }
 
