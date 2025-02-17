@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.blueText{
+    color: rgb(22, 182, 245);
+    
+  text-shadow: 3px 3px 3px black;
+}
+.blueText:hover{
+  filter: drop-shadow(0 0 5px rgb(11, 207, 221));
+  text-shadow: 1px 1px 01px rgb(255, 255, 255);
+}
+.redText{
+    color: red;
+    
+  text-shadow: 3px 3px 3px black;
+}
+.redText:hover{
+    filter:drop-shadow(0 0 5px rgb(240, 25, 25));
+    text-shadow:1px 1px 01px whitesmoke
+}
+
+.yellowText{
+    color: snow;
+  text-shadow: 3px 3px 3px black;
+
+}
+.yellowText:hover{
+    filter: drop-shadow(0 2px 5px rgb(238, 238, 113));
+    text-shadow:1px 1px 01px  yellow;
+    
+}
+.num{
+    border: 2px solid ;
+    padding-left: 15px;
+    margin: 0 20px;
+    width: 60px;
+    
+    
+}
+ .num::-webkit-inner-spin-button,
+        .num::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+h1{
+   
+    border-bottom: 4px ;
+    border-style:ridge;
+    border-radius: 10%;
+
+}
+        
+.btn{
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1px 3px;
+    outline: none;
+    border: none;
+}
+.btn:hover {
+  box-shadow: 0 0 10px 2px skyblue;
+  border: 1px solid white;
+  outline: none;
+}
+.s:hover{
+filter: drop-shadow(0 0 10px green);
+}
+.s{
+    border: 1px solid white;
+filter: drop-shadow(0 0 10px green);
+
+}
+.f{
+   border: 1px solid white;
+}
+.n{
+background-color: #1a1a1a;
+}
+.w{
+    filter: drop-shadow(0 10px 10px rgb(53, 183, 235));
+    text-shadow: 1px 2px 3px skyblue;
+    animation: animation2 4s ease-in 1 reverse ;
+
+}
+.r{
+    border-radius: 8px;
+    cursor: pointer;
+}
+.r:hover{
+   box-shadow: 0 0 10px 2px rgb(240, 41, 34);
+  border: 1px solid white;
+  outline: none;
+
+}
+
+.s{
+    animation: animation 2s ease 2  ;
+}
+@keyframes animation{
+90% ,100% {
+    transform: scale(1);
+    opacity: 0;
+}
+}
+@keyframes animation2{
+75% ,100% {
+    transform: scale(2);
+    opacity: 0;
+}
+}
